@@ -6,7 +6,12 @@ export default function GasTracker() {
   const [data, setData] = useState("");
 
   useEffect(() => {
-    getAllData();
+    getAllData()
+
+    // const intervalId = setInterval(() => {
+    //   getAllData();
+    // }, 5000);
+    // return () => clearInterval(intervalId);
   }, []);
 
   const getAllData = async () => {
@@ -16,17 +21,11 @@ export default function GasTracker() {
       )
       .then((res) => {
         const allData = res.data;
-        console.log(allData)
+        console.log(allData);
         setData(allData);
       })
       .catch((err) => console.error(`Error: ${err}`));
-    //   const { data } = await axios.get(
-    //     `https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=${process.env.REACT_APP_ETH_SCAN_API_KEY} `
-    //   );
-    //   console.log({bru: data})
-    //  ;
-    //   console.log(data.result.ProposeGasPrice)
   };
 
-  return <DisplayGasTracker data={data} />;
+  return <DisplayGasTracker data={data.result} />;
 }
