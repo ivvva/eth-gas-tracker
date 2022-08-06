@@ -7,11 +7,10 @@ export default function GasTracker() {
 
   useEffect(() => {
     getAllData()
-
-    // const intervalId = setInterval(() => {
-    //   getAllData();
-    // }, 5000);
-    // return () => clearInterval(intervalId);
+    const intervalId = setInterval(() => {
+      getAllData();
+    }, 5000);
+    return () => clearInterval(intervalId);
   }, []);
 
   const getAllData = async () => {
@@ -21,7 +20,6 @@ export default function GasTracker() {
       )
       .then((res) => {
         const allData = res.data;
-        console.log(allData);
         setData(allData);
       })
       .catch((err) => console.error(`Error: ${err}`));

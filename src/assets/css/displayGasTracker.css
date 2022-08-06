@@ -7,10 +7,28 @@ body {
   height: 100vh;
 }
 
+.logo {
+  margin-top: 80px;
+  height: 40px;
+}
+
+.logo img{
+  height: 50px;
+}
+
+h1{
+  color: white;
+}
+
+.lastBlock{
+  padding: 0;
+}
+
 .container{
+  margin-top: 80px;
     z-index: 30;
-    height: 260px;
-    width: 420px;
+    height: 300px;
+    width: 480px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(35px);
@@ -32,6 +50,7 @@ body {
 
 .prices{
     padding: 30px;
+    padding-bottom: 0;
     display: flex;
     justify-content: space-around;
 }
@@ -44,10 +63,16 @@ body {
 
 .price{
     color: white;
+    font-size: 1.2rem;
     padding: 20px;
-    line-height: 30px;
+    padding-bottom: 5px;
+    line-height: 35px;
 }
 
+a{
+  color: rgb(235, 220, 255);
+  text-decoration: none;
+}
 .circle {
   position: absolute;
   border-radius: 50%;
@@ -68,7 +93,7 @@ body {
   height: 300px;
   width: 300px;
   top: 100px;
-  left: 250px;
+  left: 470px;
   opacity: 0.8;
   animation-timing-function: cubic-bezier(0.54, 0.085, 0.5, 0.92);
   animation-iteration-count: infinite;
@@ -79,6 +104,10 @@ body {
   -webkit-animation-delay: 3.5s;
   animation-delay: 3.5s;
   animation-direction: alternate;
+}
+
+p{
+  padding: 0;
 }
 
 .circle-2 {
@@ -118,11 +147,11 @@ body {
   }
 
   50% {
-    -webkit-transform: rotateX(0deg) translateY(1px) translateX(5px);
-    -moz-transform: rotateX(0deg) translateY(10px) translateX(5px);
-    -ms-transform: rotateX(0deg) translateY(30px) translateX(5px);
-    -o-transform: rotateX(0deg) translateY(40px) translateX(5px);
-    transform: rotateX(0deg) translateY(10px) translateX(5px);
+    -webkit-transform: rotateX(0deg) translateY(3px) translateX(7px);
+    -moz-transform: rotateX(0deg) translateY(13px) translateX(7px);
+    -ms-transform: rotateX(0deg) translateY(40px) translateX(7px);
+    -o-transform: rotateX(0deg) translateY(50px) translateX(7px);
+    transform: rotateX(0deg) translateY(20px) translateX(7px);
   }
   100% {
     -webkit-transform: rotateX(0deg) translateY(0px) translateX(1px);
@@ -130,5 +159,14 @@ body {
     -ms-transform: rotateX(0deg) translateY(0px) translateX(1px);
     -o-transform: rotateX(0deg) translateY(0px) translateX(1px);
     transform: rotateX(0deg) translateY(0px) translateX(1px);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
